@@ -1,21 +1,21 @@
 # Ansible Collection - my_own_namespace.yandex_cloud_elk
 
-## Overview
-This collection provides a custom module and role that create a text file on a target host with the specified content.
+## Описание
+Коллекция содержит собственный модуль и роль, которые создают текстовый файл на хосте с заданным содержимым.
 
-## Requirements
+## Требования
 - Ansible Core
 
-## Included content
+## Состав коллекции
 
-### Module: `my_own_module`
-Creates a text file at a given path with the provided content.
+### Модуль: `my_own_module`
+Создаёт текстовый файл по указанному пути и записывает в него заданный контент.
 
-**Parameters**
-- `path` (str, required): Destination path for the file.
-- `content` (str, required): Text to write into the file.
+**Параметры**
+- `path` (str, обязателен): путь к файлу.
+- `content` (str, обязателен): содержимое файла.
 
-**Example**
+**Пример**
 ```yaml
 - name: Create file with content
   my_own_namespace.yandex_cloud_elk.my_own_module:
@@ -23,14 +23,14 @@ Creates a text file at a given path with the provided content.
     content: hello world
 ```
 
-### Role: `my_own_role`
-Wraps the module into a role with defaults.
+### Роль: `my_own_role`
+Обёртка над модулем с дефолтными параметрами.
 
 **Defaults**
 - `my_own_module_path`: `/tmp/my_own_module.txt`
 - `my_own_module_content`: `hello world`
 
-**Example**
+**Пример**
 ```yaml
 - name: Test my_own_role
   hosts: localhost
@@ -39,5 +39,5 @@ Wraps the module into a role with defaults.
     - role: my_own_role
 ```
 
-## Local testing
-Use `inventory.ini`, `playbook.yml` (single task), or `playbook_role.yml` (role).
+## Локальная проверка
+Используйте `inventory.ini`, `playbook.yml` (single task) или `playbook_role.yml` (роль).
